@@ -25,14 +25,14 @@ public class PlayerMovement : MonoBehaviour
 
   void Update()
   {
-    if (Input.GetKeyDown(KeyCode.A))
-    {
-      currentLane--;
-      animator.SetTrigger("Move");
-    }
-    else if (Input.GetKeyDown(KeyCode.D))
+    if (Input.GetKeyDown(KeyCode.A)||Input.GetKeyDown(KeyCode.LeftArrow))
     {
       currentLane++;
+      animator.SetTrigger("Move");
+    }
+    else if (Input.GetKeyDown(KeyCode.D)||Input.GetKeyDown(KeyCode.RightArrow))
+    {
+      currentLane--;
       animator.SetTrigger("Move");
     }
     currentLane = Mathf.Clamp(currentLane, 0, totalLanes - 1);
